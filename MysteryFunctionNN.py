@@ -24,8 +24,8 @@ for i in range(1000):
   b = random.random()
   desiredOutput = mystery(a,b)
 
-  output = model(torch.tensor.squeeze(([a,b])))
-  loss = criterion(output, desiredOutput)
+  output = model(torch.tensor(([a,b])))
+  loss = criterion(output.squeeze(), desiredOutput)
 
   if (i % 100)==0:
     print(f"Loss: {loss.item()}")
